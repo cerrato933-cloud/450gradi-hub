@@ -1,107 +1,134 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>450 Gradi | Reserva tu ciudad</title>
-  <meta name="description" content="450 Gradi — Reserva tu mesa en Miami, Las Palmas, Maspalomas o Puglia." />
-  <style>
-    :root{
-      --bg:#070707; --gold:#d4af37; --text:#f5f5f5; --muted:rgba(245,245,245,.72);
-      --card:rgba(255,255,255,.04); --card2:rgba(255,255,255,.06);
-      --shadow: 0 20px 60px rgba(0,0,0,.55); --radius:22px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", sans-serif;
-      background: radial-gradient(1200px 800px at 50% 10%, rgba(212,175,55,.14), transparent 55%),
-                  radial-gradient(900px 700px at 25% 85%, rgba(255,80,80,.08), transparent 60%),
-                  var(--bg);
-      color:var(--text);
-      min-height:100vh;
-      display:flex; align-items:center; justify-content:center;
-      padding:24px;
-    }
-    .wrap{
-      width:min(560px, 100%);
-      background: linear-gradient(180deg, var(--card), rgba(255,255,255,.02));
-      border:1px solid rgba(212,175,55,.22);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
-    .top{ padding:28px 22px 10px; text-align:center; }
-    .brand{
-      display:flex; align-items:center; justify-content:center; gap:10px;
-      font-weight:800; letter-spacing:.5px; font-size:34px; margin:0 0 6px;
-    }
-    .brand .dot{ width:10px;height:10px;border-radius:999px;background:var(--gold);
-      box-shadow:0 0 18px rgba(212,175,55,.55); }
-    .sub{ margin:0; color:var(--muted); font-size:15px; letter-spacing:.2px; line-height:1.35; }
-    .pill{
-      margin:14px auto 0; display:inline-flex; gap:10px; align-items:center;
-      padding:9px 14px; border-radius:999px;
-      border:1px solid rgba(212,175,55,.28); background:rgba(212,175,55,.08);
-      color:rgba(245,245,245,.9); font-size:13px;
-    }
-    .pill b{color:var(--gold)}
-    .content{ padding:18px 18px 22px; }
-    .btn{
-      display:flex; align-items:center; justify-content:space-between; gap:14px;
-      width:100%; padding:16px 16px; margin:12px 0;
-      border-radius:18px; border:1px solid rgba(212,175,55,.22);
-      background: linear-gradient(180deg, var(--card2), rgba(255,255,255,.02));
-      color:var(--text); text-decoration:none; font-weight:700; letter-spacing:.2px;
-      transition: transform .12s ease, border-color .12s ease, background .12s ease;
-    }
-    .btn:hover{ transform: translateY(-1px); border-color: rgba(212,175,55,.45); background: rgba(255,255,255,.07); }
-    .btn small{ display:block; color:var(--muted); font-weight:600; letter-spacing:.1px; margin-top:2px; }
-    .arrow{
-      flex:0 0 auto; width:36px; height:36px; border-radius:14px;
-      display:grid; place-items:center;
-      background: rgba(212,175,55,.12); border:1px solid rgba(212,175,55,.28);
-      color:var(--gold); font-size:18px;
-    }
-    .footer{
-      padding:14px 18px 20px; text-align:center;
-      color:rgba(245,245,245,.6); font-size:12px;
-      border-top:1px solid rgba(212,175,55,.14); background: rgba(0,0,0,.18);
-    }
-    .note{ margin-top:6px; color:rgba(245,245,245,.55); font-size:12px; }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>450 Gradi | Pasión Italiana</title>
+
+<style>
+:root{
+--bg:#050505;
+--gold:#d4af37;
+--text:#f8f8f8;
+--muted:rgba(255,255,255,.75);
+--radius:26px;
+}
+
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto;
+background: radial-gradient(900px 600px at 50% 0%, rgba(212,175,55,.18), transparent 60%), var(--bg);
+color:var(--text);
+display:flex;
+align-items:center;
+justify-content:center;
+min-height:100vh;
+padding:20px;
+}
+
+.wrap{
+width:min(560px,100%);
+background:rgba(255,255,255,.04);
+border:1px solid rgba(212,175,55,.3);
+border-radius:var(--radius);
+padding:34px 24px;
+text-align:center;
+box-shadow:0 25px 70px rgba(0,0,0,.6);
+}
+
+.logo{
+width:130px;
+margin-bottom:22px;
+filter: drop-shadow(0 0 20px rgba(212,175,55,.5));
+}
+
+h1{
+margin:0;
+font-size:34px;
+letter-spacing:.6px;
+}
+
+.subtitle{
+margin:12px 0 28px;
+font-size:17px;
+line-height:1.5;
+color:var(--muted);
+}
+
+.highlight{
+color:var(--gold);
+font-weight:600;
+}
+
+.btn{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px;
+margin:14px 0;
+border-radius:20px;
+border:1px solid rgba(212,175,55,.35);
+background:rgba(255,255,255,.03);
+text-decoration:none;
+color:var(--text);
+font-weight:600;
+transition:all .25s ease;
+}
+
+.btn:hover{
+background:rgba(212,175,55,.15);
+transform:translateY(-3px);
+}
+
+small{
+display:block;
+font-size:13px;
+color:var(--muted);
+font-weight:400;
+margin-top:4px;
+}
+
+.footer{
+margin-top:28px;
+font-size:13px;
+color:rgba(255,255,255,.55);
+}
+</style>
 </head>
+
 <body>
-  <main class="wrap" role="main">
-    <header class="top">
-      <h1 class="brand"><span class="dot"></span>450 Gradi</h1>
-      <p class="sub">Restaurante italiano & pizzería napolitana 🇮🇹<br/>Fuego · Vino · <b style="color:var(--gold);font-weight:800;">Deseo italiano</b></p>
-      <div class="pill">💘 <span>San Valentín · <b>Últimas mesas</b></span></div>
-    </header>
+<div class="wrap">
 
-    <section class="content" aria-label="Reservas por ciudad">
-      <a class="btn" href="https://450-gradi.com/es/reserva-miami.html" id="miami">
-        <div>MIAMI <small>Coral Gables</small></div>
-        <div class="arrow">›</div>
-      </a>
-      <a class="btn" href="https://450-gradi.com/es/reserva-las-palmas.html" id="laspalmas">
-        <div>LAS PALMAS <small>Reserva tu mesa</small></div>
-        <div class="arrow">›</div>
-      </a>
-      <a class="btn" href="https://450-gradi.com/es/restaurante-maspalomas.html" id="maspalomas">
-        <div>MASPALOMAS <small>Reserva tu mesa</small></div>
-        <div class="arrow">›</div>
-      </a>
-      <a class="btn" href="https://450-gradi.com/es/restaurante-italia.html" id="puglia">
-        <div>PUGLIA <small>Reserva tu mesa</small></div>
-        <div class="arrow">›</div>
-      </a>
-      <div class="note">Tip: crea 4 anuncios (uno por ciudad) con el enlace directo de esa sede.</div>
-    </section>
+<h1>450 Gradi</h1>
 
-    <footer class="footer">
-      450 Gradi — Donde el deseo comienza.
-    </footer>
-  </main>
+<div class="subtitle">
+Restaurante italiano & pizzería napolitana 🇮🇹<br>
+<span class="highlight">Donde el deseo se sirve caliente.</span><br>
+Vino, fuego y pasión en cada detalle.
+</div>
+
+<a class="btn" href="https://450-gradi.com/es/reserva-las-palmas.html">
+<div>LAS PALMAS<small>Reserva tu experiencia ahora</small></div>→
+</a>
+
+<a class="btn" href="https://450-gradi.com/es/restaurante-maspalomas.html">
+<div>MASPALOMAS<small>Reserva tu experiencia ahora</small></div>→
+</a>
+
+<a class="btn" href="https://450-gradi.com/es/reserva-miami.html">
+<div>MIAMI<small>Coral Gables</small></div>→
+</a>
+
+<a class="btn" href="https://450-gradi.com/es/restaurante-italia.html">
+<div>PUGLIA<small>Italia</small></div>→
+</a>
+
+<div class="footer">
+450 Gradi — Italia en su versión más sensual.
+</div>
+
+</div>
 </body>
 </html>
