@@ -1,134 +1,214 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>450 Gradi | Pasión Italiana</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>450 Gradi | Reserva</title>
+  <meta name="description" content="450 Gradi - Restaurante italiano & pizzería napolitana. Reserva tu mesa." />
+  <style>
+    :root{
+      --bg:#070707;
+      --card:#111111cc;
+      --gold1:#f6d37a;
+      --gold2:#c79a3b;
+      --text:#ffffff;
+      --muted:rgba(255,255,255,.70);
+      --muted2:rgba(255,255,255,.55);
+      --border:rgba(246,211,122,.35);
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 420px at 30% 10%, rgba(199,154,59,.22), transparent 60%),
+        radial-gradient(700px 360px at 80% 70%, rgba(246,211,122,.12), transparent 55%),
+        radial-gradient(420px 280px at 55% 45%, rgba(255,60,120,.08), transparent 60%),
+        linear-gradient(180deg, #050505, #0a0a0a 40%, #060606);
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:26px 16px;
+    }
 
-<style>
-:root{
---bg:#050505;
---gold:#d4af37;
---text:#f8f8f8;
---muted:rgba(255,255,255,.75);
---radius:26px;
-}
+    .wrap{
+      width:100%;
+      max-width:520px;
+    }
 
-*{box-sizing:border-box}
+    .glass{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      padding:28px 22px 22px;
+      position:relative;
+      overflow:hidden;
+    }
 
-body{
-margin:0;
-font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto;
-background: radial-gradient(900px 600px at 50% 0%, rgba(212,175,55,.18), transparent 60%), var(--bg);
-color:var(--text);
-display:flex;
-align-items:center;
-justify-content:center;
-min-height:100vh;
-padding:20px;
-}
+    .glass:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(500px 200px at 20% 0%, rgba(246,211,122,.18), transparent 55%),
+        radial-gradient(420px 220px at 90% 15%, rgba(199,154,59,.12), transparent 60%),
+        radial-gradient(520px 280px at 50% 110%, rgba(255,60,120,.10), transparent 60%);
+      pointer-events:none;
+      filter:blur(.2px);
+    }
 
-.wrap{
-width:min(560px,100%);
-background:rgba(255,255,255,.04);
-border:1px solid rgba(212,175,55,.3);
-border-radius:var(--radius);
-padding:34px 24px;
-text-align:center;
-box-shadow:0 25px 70px rgba(0,0,0,.6);
-}
+    .content{position:relative}
 
-.logo{
-width:130px;
-margin-bottom:22px;
-filter: drop-shadow(0 0 20px rgba(212,175,55,.5));
-}
+    .logo{
+      width:150px;
+      height:auto;
+      display:block;
+      margin:0 auto 18px;
+      filter: drop-shadow(0 8px 18px rgba(0,0,0,.55));
+    }
 
-h1{
-margin:0;
-font-size:34px;
-letter-spacing:.6px;
-}
+    h1{
+      margin:0;
+      text-align:center;
+      font-size:40px;
+      letter-spacing:.3px;
+      font-weight:800;
+    }
 
-.subtitle{
-margin:12px 0 28px;
-font-size:17px;
-line-height:1.5;
-color:var(--muted);
-}
+    .subtitle{
+      margin-top:10px;
+      text-align:center;
+      line-height:1.25;
+      color:var(--muted);
+      font-size:15px;
+    }
 
-.highlight{
-color:var(--gold);
-font-weight:600;
-}
+    .highlight{
+      display:inline-block;
+      margin-top:6px;
+      padding:7px 12px;
+      border-radius:999px;
+      border:1px solid rgba(246,211,122,.40);
+      background:linear-gradient(180deg, rgba(246,211,122,.10), rgba(199,154,59,.06));
+      color:rgba(255,255,255,.92);
+      font-weight:700;
+      letter-spacing:.2px;
+    }
 
-.btn{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px;
-margin:14px 0;
-border-radius:20px;
-border:1px solid rgba(212,175,55,.35);
-background:rgba(255,255,255,.03);
-text-decoration:none;
-color:var(--text);
-font-weight:600;
-transition:all .25s ease;
-}
+    .btn{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      width:100%;
+      padding:16px 16px;
+      margin-top:14px;
+      border-radius:16px;
+      border:1px solid rgba(246,211,122,.35);
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      color:var(--text);
+      text-decoration:none;
+      transition:transform .08s ease, border-color .15s ease, background .15s ease;
+    }
+    .btn:hover{
+      transform:translateY(-1px);
+      border-color:rgba(246,211,122,.55);
+      background:linear-gradient(180deg, rgba(246,211,122,.08), rgba(255,255,255,.02));
+    }
 
-.btn:hover{
-background:rgba(212,175,55,.15);
-transform:translateY(-3px);
-}
+    .city{
+      font-weight:900;
+      letter-spacing:.4px;
+    }
+    .small{
+      display:block;
+      margin-top:3px;
+      font-size:13px;
+      color:var(--muted2);
+      font-weight:600;
+    }
 
-small{
-display:block;
-font-size:13px;
-color:var(--muted);
-font-weight:400;
-margin-top:4px;
-}
+    .arrow{
+      width:34px;
+      height:34px;
+      border-radius:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid rgba(246,211,122,.35);
+      background:linear-gradient(180deg, rgba(246,211,122,.14), rgba(199,154,59,.05));
+      flex:0 0 auto;
+      font-size:18px;
+      line-height:1;
+    }
 
-.footer{
-margin-top:28px;
-font-size:13px;
-color:rgba(255,255,255,.55);
-}
-</style>
+    .footer{
+      margin-top:18px;
+      text-align:center;
+      font-size:13px;
+      color:rgba(255,255,255,.55);
+    }
+  </style>
 </head>
 
 <body>
-<div class="wrap">
-<img src="logo.png" alt="450 Gradi" style="width:130px; margin-bottom:25px;">
-<h1>450 Gradi</h1>
+  <div class="wrap">
+    <div class="glass">
+      <div class="content">
 
-<div class="subtitle">
-Restaurante italiano & pizzería napolitana 🇮🇹<br>
-<span class="highlight">Donde el deseo se sirve caliente.</span><br>
-Vino, fuego y pasión en cada detalle.
-</div>
+        <!-- LOGO -->
+        <img class="logo" src="logo.png" alt="450 Gradi" />
 
-<a class="btn" href="https://450-gradi.com/es/reserva-las-palmas.html">
-<div>LAS PALMAS<small>Reserva tu experiencia ahora</small></div>→
-</a>
+        <h1>450 Gradi</h1>
 
-<a class="btn" href="https://450-gradi.com/es/restaurante-maspalomas.html">
-<div>MASPALOMAS<small>Reserva tu experiencia ahora</small></div>→
-</a>
+        <!-- HEADLINE SENSUALE (NO “SAN VALENTÍN”) -->
+        <div class="subtitle">
+          Restaurante italiano & pizzería napolitana 🇮🇹<br>
+          <span class="highlight">Donde el fuego despierta el deseo.</span><br>
+          Reserva tu experiencia italiana.
+        </div>
 
-<a class="btn" href="https://450-gradi.com/es/reserva-miami.html">
-<div>MIAMI<small>Coral Gables</small></div>→
-</a>
+        <!-- LINKS -->
+        <a class="btn" href="https://450-gradi.com/es/reserva-miami.html">
+          <div>
+            <span class="city">MIAMI</span>
+            <span class="small">Coral Gables</span>
+          </div>
+          <div class="arrow">›</div>
+        </a>
 
-<a class="btn" href="https://450-gradi.com/es/restaurante-italia.html">
-<div>PUGLIA<small>Italia</small></div>→
-</a>
+        <a class="btn" href="https://450-gradi.com/es/reserva-las-palmas.html">
+          <div>
+            <span class="city">LAS PALMAS</span>
+            <span class="small">Reserva tu mesa</span>
+          </div>
+          <div class="arrow">›</div>
+        </a>
 
-<div class="footer">
-450 Gradi — Italia en su versión más sensual.
-</div>
+        <a class="btn" href="https://450-gradi.com/es/restaurante-maspalomas.html">
+          <div>
+            <span class="city">MASPALOMAS</span>
+            <span class="small">Reserva tu mesa</span>
+          </div>
+          <div class="arrow">›</div>
+        </a>
 
-</div>
+        <a class="btn" href="https://450-gradi.com/es/restaurante-italia.html">
+          <div>
+            <span class="city">PUGLIA</span>
+            <span class="small">Italia</span>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+
+        <div class="footer">450 Gradi — Italia en su versión más sensual.</div>
+
+      </div>
+    </div>
+  </div>
 </body>
 </html>
